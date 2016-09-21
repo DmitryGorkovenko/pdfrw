@@ -27,7 +27,7 @@ def compress(mylist):
         newstr = zlib.compress(oldstr)
         if len(newstr) < len(oldstr) + 30:
             if sys.version_info >= (3, 0):
-                obj.stream = newstr.encode('latin1')
+                obj.stream = newstr.decode('latin1')
             else:
                 obj.stream = newstr
             obj.Filter = flate
